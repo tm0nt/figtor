@@ -135,7 +135,7 @@
         </v-list-item>
       </v-list>
       <template v-slot:append>
-        <div class="pa-4">
+        <div class="pa-2">
           <v-list-item @click="logout" title="Sair" value="sair">
             <template v-slot:prepend>
               <v-icon color=""> fluent:door-arrow-left-20-regular </v-icon>
