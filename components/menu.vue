@@ -15,7 +15,7 @@
             ></v-btn>
           </v-col>
           <v-col md="7" cols="8">
-            <h1>Olá, Rafael Moreira</h1>
+            <h1>Olá, Rafael</h1>
           </v-col>
           <v-col md="2" class="d-none d-md-flex">
             <v-btn
