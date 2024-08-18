@@ -17,6 +17,5 @@ export const defaults: DefaultsInstance = {
     color: "primary",
     variant: "solo",
     density: "comfortable",
-    
   },
 };

@@ -3,7 +3,8 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 // PWA Config
 const title = "Figtor";
 const shortTitle = "Do figma para o elementor em 1 clique.";
-const description = "Transforme designs do Figma em páginas web no Elementor com um único clique! Nosso projeto revolucionário elimina a necessidade de conversão manual e acelera o processo de desenvolvimento web.";
+const description =
+  "Transforme designs do Figma em páginas web no Elementor com um único clique! Nosso projeto revolucionário elimina a necessidade de conversão manual e acelera o processo de desenvolvimento web.";
 const image = "https://i.imgur.com/RUzkUPk.png";
 const url = "https://figtor.com.br";
 const themeColor = "#90F209";

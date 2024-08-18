@@ -1,6 +1,6 @@
 <template>
-    <DrawerComponent/>
-    <MenuComponent/>
+  <DrawerComponent />
+  <MenuComponent />
 </template>
 <script setup>
 import DrawerComponent from "@/components/drawer.vue";
