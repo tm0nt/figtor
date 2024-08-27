@@ -1,0 +1,10 @@
+{
+    "development": {
+      "username": "figtor",
+      "password": "Qw3RtY77$",
+      "database": "figtor",
+      "host": "82.112.244.43",
+      "dialect": "mysql"
+    }
+  }
+  

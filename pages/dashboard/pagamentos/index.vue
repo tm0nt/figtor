@@ -1,8 +1,8 @@
 <template>
-  <DrawerComponent />
   <MenuComponent />
+  <Pagamentos/>
 </template>
 <script setup>
-import DrawerComponent from "@/components/drawer.vue";
 import MenuComponent from "@/components/menu.vue";
+import Pagamentos from "@/components/pagamentos.vue";
 </script>

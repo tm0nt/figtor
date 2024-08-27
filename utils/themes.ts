@@ -28,7 +28,7 @@ export const dark: ThemeDefinition = {
     primary: "#90F209",
     input: "#121212",
     secondary: twColors.purple[500],
-    error: twColors.red[500],
+    error: '#C70039',
     info: twColors.blue[500],
     success: twColors.emerald[500],
     warning: twColors.amber[500],

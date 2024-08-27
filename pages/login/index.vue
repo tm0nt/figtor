@@ -3,8 +3,9 @@
     <VRow no-gutters align="center" justify="center" class="fill-height">
       <VCol cols="12" md="6" lg="5" sm="6">
         <VRow no-gutters align="center" justify="center">
-          <VCol cols="10" md="6">
-            <VImg src="/logo/figtor.png" class="mx-auto" width="200"></VImg>
+          <VCol cols="10" md="8">
+            <VImg src="/logo/figtor.png" class="mx-auto" width="150"></VImg>
+            <h2 class="text-center mt-4 mb-2">Insira abaixo seus dados</h2>
             <VForm @submit.prevent="submit" class="mt-7">
               <div class="mt-1">
                 <label class="label text-grey-darken-2" for="email">Seu e-mail</label>
@@ -34,11 +35,6 @@
                   bg-color="input"
                 />
               </div>
-              <p class="text-body-2 mt-n4 text-right">
-                <NuxtLink to="/reset-password" class="font-weight-bold text-primary"
-                  >Esqueceu sua senha?</NuxtLink
-                >
-              </p>
               <div class="mt-4">
                 <VBtn
                   type="submit"
@@ -47,21 +43,24 @@
                   to="/dashboard/"
                   color="primary"
                   class="gradient text-capitalize"
-                  >Entrar</VBtn
+                  >ENTRAR AGORA</VBtn
                 >
               </div>
-              <div class="mt-1">
+              <div class="mt-2">
                 <VBtn
                   type="submit"
                   block
                   min-height="50"
-                  color="primary"
-                  variant="outlined"
-                  class="gradient text-capitalize"
-                  >Não possui conta?</VBtn
+                  color="#909090"
+                  variant="tonal"
+                  class="text-capitalize"
+                  >Esqueci minha senha</VBtn
                 >
               </div>
             </VForm>
+            <h1 class="text-center">
+                  <v-btn class="text-capitalize text-medium-emphasis" variant="text" to="/cadastro">Não possui conta? Clique aqui</v-btn>
+                </h1>
           </VCol>
         </VRow>
       </VCol>

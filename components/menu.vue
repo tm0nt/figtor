@@ -14,7 +14,7 @@
               icon="fluent:list-20-regular"
             ></v-btn>
           </v-col>
-          <v-col md="7" cols="8">
+          <v-col md="7" cols="7">
             <h1>Olá, Rafael</h1>
           </v-col>
           <v-col md="2" class="d-none d-md-flex">
@@ -90,17 +90,14 @@
         <h2>Faça sua avaliação</h2>
 
         <!-- Star Rating -->
-        <div class="star-rating mt-2 mb-2">
-          <v-icon
-            v-for="star in 5"
-            :key="star"
-            :color="star <= rating ? 'primary' : 'grey lighten-1'"
-            @click="rating = star"
-            size="32"
-          >
-            mdi-star
-          </v-icon>
-        </div>
+        <v-rating
+  half-increments
+  hover
+  :length="5"
+  :size="40"
+  :model-value="5"
+  active-color="primary"
+ />
 
         <v-textarea class="mt-2" placeholder="Escreva um elogio, melhoria aqui...."></v-textarea>
         <v-btn
@@ -115,35 +112,35 @@
     </v-card>
   </v-dialog>
   <v-navigation-drawer v-model="drawer" color="background" width="280" border="none">
-      <v-toolbar color="rgb(0,0,0,0)" height="60"></v-toolbar>
-      <v-img src="/logo/figtor.png" width="180" class="ml-2"></v-img>
-      <v-toolbar color="rgb(0,0,0,0)" height="30"></v-toolbar>
-      <v-list density="comfortable" nav>
-        <v-list-item
-          v-for="item in items"
-          :key="item.value"
-          :to="item.to"
-          :title="item.title"
-          :class="{ 'selected-item': selectedItem === item.value }"
-          @click="selectItem(item.value)"
-        >
+    <v-toolbar color="rgb(0,0,0,0)" height="60"></v-toolbar>
+    <v-img src="/logo/figtor.png" width="180" class="ml-2"></v-img>
+    <v-toolbar color="rgb(0,0,0,0)" height="30"></v-toolbar>
+    <v-list density="comfortable" nav>
+      <v-list-item
+        v-for="item in items"
+        :key="item.value"
+        :to="item.to"
+        :title="item.title"
+        :class="{ 'selected-item': selectedItem === item.value }"
+        @click="selectItem(item.value)"
+      >
+        <template v-slot:prepend>
+          <v-icon :color="selectedItem === item.value ? 'primary' : ''">
+            {{ item.icon }}
+          </v-icon>
+        </template>
+      </v-list-item>
+    </v-list>
+    <template v-slot:append>
+      <div class="pa-2">
+        <v-list-item @click="logout" title="Sair" value="sair">
           <template v-slot:prepend>
-            <v-icon :color="selectedItem === item.value ? 'primary' : ''">
-              {{ item.icon }}
-            </v-icon>
+            <v-icon color=""> fluent:door-arrow-left-20-regular </v-icon>
           </template>
         </v-list-item>
-      </v-list>
-      <template v-slot:append>
-        <div class="pa-2">
-          <v-list-item @click="logout" title="Sair" value="sair">
-            <template v-slot:prepend>
-              <v-icon color=""> fluent:door-arrow-left-20-regular </v-icon>
-            </template>
-          </v-list-item>
-        </div>
-      </template>
-    </v-navigation-drawer>
+      </div>
+    </template>
+  </v-navigation-drawer>
 </template>
 
 <script setup>
@@ -164,37 +161,36 @@ const props = defineProps({
 const { conta } = props;
 
 const drawer = ref(true);
-  const selectedItem = ref("home"); // Item selecionado inicial
-  const items = [
-    { title: "Dashboard", value: "home", icon: "fluent:home-20-regular", to: "/dashboard" },
-    {
-      title: "Histórico",
-      value: "historico",
-      icon: "fluent:history-20-regular",
-      to: "/dashboard/historico/",
-    },
-    {
-      title: "Pagamentos",
-      value: "pagamentos",
-      icon: "fluent:wallet-20-regular",
-      to: "/dashboard/pagamentos/",
-    },
-    {
-      title: "Aparelhos conectados",
-      value: "aparelhos",
-      icon: "fluent:link-square-20-regular",
-      to: "/dashboard/aparelhos/",
-    },
-  ];
-  
-  const selectItem = (value) => {
-    selectedItem.value = value;
-  };
-  
-  const logout = () => {
-    // Implementar lógica de logout aqui
-  };
+const selectedItem = ref("home"); // Item selecionado inicial
+const items = [
+  { title: "Dashboard", value: "home", icon: "fluent:home-20-regular", to: "/dashboard" },
+  {
+    title: "Histórico",
+    value: "historico",
+    icon: "fluent:history-20-regular",
+    to: "/dashboard/historico/",
+  },
+  {
+    title: "Pagamentos",
+    value: "pagamentos",
+    icon: "fluent:wallet-20-regular",
+    to: "/dashboard/pagamentos/",
+  },
+  {
+    title: "Aparelhos conectados",
+    value: "aparelhos",
+    icon: "fluent:link-square-20-regular",
+    to: "/dashboard/aparelhos/",
+  },
+];
 
+const selectItem = (value) => {
+  selectedItem.value = value;
+};
+
+const logout = () => {
+  // Implementar lógica de logout aqui
+};
 </script>
 
 <style scoped>
@@ -204,6 +200,6 @@ const drawer = ref(true);
   cursor: pointer;
 }
 .selected-item {
-    background-color: #121212; /* Cor de fundo para o item selecionado, se necessário */
-  }
+  background-color: #121212; /* Cor de fundo para o item selecionado, se necessário */
+}
 </style>

@@ -1,5 +1,4 @@
 <template>
-  <DrawerComponent />
   <MenuComponent />
 </template>
 <script setup>
